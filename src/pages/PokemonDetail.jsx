@@ -12,6 +12,16 @@ export const PokemonDetail = () => {
   const goBack = () => {
     navigate("/");
   };
+
+  const Example = () => {
+    const inputRef = React.useRef(null)
+          
+    return (
+      <div ref={inputRef} onClick={goBack}>
+        
+      </div>
+    )
+  }
   const params = useParams();
   const { pokemonId } = params;
 
@@ -28,7 +38,7 @@ export const PokemonDetail = () => {
       .then((pokemon) => {
         setPokemon(pokemon);
       })
-      .catch((error) => {});
+      .catch((error) => { });
   }, []);
 
   return (
@@ -67,8 +77,21 @@ export const PokemonDetail = () => {
           </div>
         </>
       ) : (
-        <>Loading</>
-      )}
+        <>
+         
+          <h1></h1>
+          <button id="btn1"
+              onClick={goBack}
+              className="bg-slate-800 p-2 m-1 rounded-md text-white hover:bg-slate-900 w-24"
+            >
+              Regresar
+            </button>
+                     
+          {//inputRef.current.click()
+          }
+        </>
+      )
+      }
     </div>
   );
 };
